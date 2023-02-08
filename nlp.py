@@ -112,4 +112,4 @@ if __name__ == "__main__":
         print("Your Password(s) is:\n", end="", flush=True)
         indent = "   "
     for pws in passwords:
-        print(f"{indent}{pws}")
+        print(f"{indent}{pws}", end='' if args.quiet is True else '\n')
