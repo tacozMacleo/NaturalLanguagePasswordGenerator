@@ -79,7 +79,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-l", "--length",
-                        help="The Number of Adjective & noun pairs wanted.",
+                        help="The Number of Adjective & noun pairs wanted. (Default 3)",
                         type=int, default=3)
     parser.add_argument("-c", "--count",
                         help="The number of password wanted.",
