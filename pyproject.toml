@@ -1,0 +1,27 @@
+[project]
+name = "nlp"
+version = "0.1.0"
+description = "Ready to use Natural Language Password Generator."
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = []
+
+[project.scripts]
+nlp = "nlp.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+############################## Bump My Version #############################
+[tool.bumpversion]
+current_version = "0.1.0"
+tag = true
+commit = true
+message = "Bump version: {current_version} → {new_version}"
+
+[[tool.bumpversion.files]]
+filename = "src/blp/__init__.py"
+search = '__version__ = "v{current_version}"'
+replace = '__version__ = "v{new_version}"'
+
