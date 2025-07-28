@@ -2,6 +2,8 @@
 name = "nlp"
 version = "0.1.0"
 description = "Ready to use Natural Language Password Generator."
+license = "GPL-3.0 license"
+license-files = ["LICENSE"]
 readme = "README.md"
 requires-python = ">=3.7"
 dependencies = []
