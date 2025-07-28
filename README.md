@@ -8,12 +8,34 @@ generated password, but still harder to brute-force.
 Database source:
 https://github.com/NaturalLanguagePasswords/system
 
-Use case:
+
+Python versions supported: 3.7+
+
+CLI Use case:
 -------------------------------------------------------------------------------
-`./nlp.py`
+`nlp`
 
 For getting help menu:
-`./nlp.py --help`
+`nlp --help`
 
 For use in a script:
-`./nlp.py -q`
+`nlp -s`
+
+
+Package:
+-------------------------------------------------------------------------------
+Can also be used as a library.
+```python
+import nlp
+
+password = nlp.get_password(pair_len=6)
+```
+run:
+```python
+help(nlp.get_password)
+```
+for more information on the function.
+
+TODO:
+===============================================================================
+ * [ ] Add better support for script mode and multiple passwords.

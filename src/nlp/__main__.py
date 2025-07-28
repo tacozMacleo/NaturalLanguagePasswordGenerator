@@ -5,7 +5,7 @@ from . import __version__
 from . import get_password
 
 
-def main():
+def main() -> None:
     logging_level_map = {
         1: 50,
         2: 40,

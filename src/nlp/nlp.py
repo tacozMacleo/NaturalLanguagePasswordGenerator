@@ -10,10 +10,12 @@ import itertools
 import logging
 import pathlib
 import sqlite3
+import types
+import typing
 
 
 class NaturalLanguagePassword:
-    def __init__(self, self_random=True):
+    def __init__(self, self_random: bool = True) -> None:
         db_file = pathlib.Path(__file__).resolve().parent / "nlp.db"
         self.log = logging.getLogger("nlp_gen")
         self.log.addHandler(logging.NullHandler())
@@ -29,33 +31,38 @@ class NaturalLanguagePassword:
     def __enter__(self):
         return self
 
-    def __exit__(self, *args, **kwargs):
+    def __exit__(
+        self,
+        exctype: typing.Optional[typing.Type[BaseException]],
+        excinst: typing.Optional[BaseException],
+        exctb: typing.Optional[types.TracebackType],
+    ) -> None:
         self.close()
 
-    def _create(self, folder):
+    def _create(self, folder: pathlib.Path) -> None:
         self.log.info("First time DB generation...")
         sql_file = folder / "nlp.sql"
         with self.db as database:
             for cmd in sql_file.read_text().split("\n"):
                 database.execute(cmd)
 
-    def add(self):
+    def add(self) -> None:
         raise NotImplementedError
 
-    def remove(self):
+    def remove(self) -> None:
         raise NotImplementedError
 
-    def count_adj(self):
+    def count_adj(self) -> int:
         cmd = "SELECT COUNT(*) FROM `word_list` WHERE adjective IS 1"
         return self.db.execute(cmd).fetchall()[0][0]
 
-    def count_noun(self, plural=False):
+    def count_noun(self, plural: bool = False) -> int:
         cmd = "SELECT COUNT(*) FROM `word_list` WHERE noun IS 1"
         if not plural:
             cmd += "AND plural is 0"
         return self.db.execute(cmd).fetchall()[0][0]
 
-    def get_adj(self):
+    def get_adj(self) -> str:
         cmd = " ".join(
             [
                 "SELECT `word` FROM `word_list`",
@@ -66,7 +73,7 @@ class NaturalLanguagePassword:
         self.log.debug(f"Executing: {cmd}")
         return self.db.execute(cmd).fetchone()[0]
 
-    def get_noun(self, plural=False):
+    def get_noun(self, plural: bool = False) -> str:
         cmd = " ".join(
             [
                 "SELECT `word` FROM `word_list`",
@@ -82,7 +89,7 @@ class NaturalLanguagePassword:
         self.db.close()
 
 
-def get_password(pair_len=3):
+def get_password(pair_len: int = 3) -> str:
     """
     Get pair_len amount of Adjective & Noun pair back as string.
 
