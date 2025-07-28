@@ -1,7 +1,7 @@
- Natuarl Language Password Generator
+ Natural Language Password Generator
 ===============================================================================
 
-Ready to use Natuarl Language Password Generator.
+Ready to use Natural Language Password Generator.
 Based on the idea that a adj. noun pair is easier to remember then a random
 generated password, but still harder to brute-force.
 
