@@ -23,7 +23,7 @@ commit = true
 message = "Bump version: {current_version} → {new_version}"
 
 [[tool.bumpversion.files]]
-filename = "src/nlp/__init__.py"
+filename = "src/nlpg/__init__.py"
 search = '__version__ = "v{current_version}"'
 replace = '__version__ = "v{new_version}"'
 
