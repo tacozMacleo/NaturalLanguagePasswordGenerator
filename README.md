@@ -13,26 +13,26 @@ Python versions supported: 3.7+
 
 CLI Use case:
 -------------------------------------------------------------------------------
-`nlp`
+`nlpg`
 
 For getting help menu:
-`nlp --help`
+`nlpg --help`
 
 For use in a script:
-`nlp -s`
+`nlpg -s`
 
 
 Package:
 -------------------------------------------------------------------------------
 Can also be used as a library.
 ```python
-import nlp
+import nlpg
 
-password = nlp.get_password(pair_len=6)
+password = nlpg.get_password(pair_len=6)
 ```
 run:
 ```python
-help(nlp.get_password)
+help(nlpg.get_password)
 ```
 for more information on the function.
 

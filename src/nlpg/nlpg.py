@@ -16,7 +16,7 @@ import typing
 
 class NaturalLanguagePassword:
     def __init__(self, self_random: bool = True) -> None:
-        db_file = pathlib.Path(__file__).resolve().parent / "nlp.db"
+        db_file = pathlib.Path(__file__).resolve().parent / "nlpg.db"
         self.log = logging.getLogger("nlp_gen")
         self.log.addHandler(logging.NullHandler())
         self._random = self_random
@@ -41,7 +41,7 @@ class NaturalLanguagePassword:
 
     def _create(self, folder: pathlib.Path) -> None:
         self.log.info("First time DB generation...")
-        sql_file = folder / "nlp.sql"
+        sql_file = folder / "nlpg.sql"
         with self.db as database:
             for cmd in sql_file.read_text().split("\n"):
                 database.execute(cmd)

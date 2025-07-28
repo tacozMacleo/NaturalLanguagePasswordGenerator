@@ -1,15 +1,15 @@
 [project]
-name = "nlp"
+name = "nlpg"
 version = "0.1.0"
 description = "Ready to use Natural Language Password Generator."
-license = "GPL-3.0 license"
-license-files = ["LICENSE"]
+license = "GPL-3.0"
+license-files = { paths = ['LICENSE'] }
 readme = "README.md"
 requires-python = ">=3.7"
 dependencies = []
 
 [project.scripts]
-nlp = "nlp.__main__:main"
+nlpg = "nlpg.__main__:main"
 
 [build-system]
 requires = ["hatchling"]

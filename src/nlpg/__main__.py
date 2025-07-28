@@ -14,7 +14,7 @@ def main() -> None:
         5: 10,
     }
 
-    parser = argparse.ArgumentParser(prog="nlp")
+    parser = argparse.ArgumentParser(prog="nlpg")
     parser.add_argument(
         "-v",
         "--version",
