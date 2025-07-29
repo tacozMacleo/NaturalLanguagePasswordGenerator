@@ -38,4 +38,5 @@ for more information on the function.
 
 TODO:
 ===============================================================================
- * [ ] Add better support for script mode and multiple passwords.
+ * [x] Add better support for script mode and multiple passwords.
+ * [ ] Add support for multiple languages.

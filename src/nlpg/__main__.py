@@ -47,7 +47,7 @@ def main() -> None:
     log_out.add_argument(
         "-s",
         "--silence",
-        help="Enable script/silence mode. Only prints the password",
+        help="Enable script/silence mode. Only prints the password, optimized for usage in scripts.",
         default=False,
         action="store_true",
     )
@@ -60,10 +60,14 @@ def main() -> None:
     indent = "" if args.silence else "   "
     p_end = "" if args.silence is True else "\n"
 
+    passwords = [
+        f"{indent}{get_password(args.length)}"
+        for _ in range(args.count)
+    ]
+
     if not args.silence:
         print("Your Password(s) is:\n", end="", flush=True)
-    for _ in range(args.count):
-        print(f"{indent}{get_password(args.length)}", end=p_end)
+    print("\n".join(passwords), end=p_end)
 
 if __name__ == "__main__":
     main()
