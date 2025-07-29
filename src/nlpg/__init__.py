@@ -1,7 +1,7 @@
 from .nlpg import get_password
 from .nlpg import NaturalLanguagePassword
 
-__version__ = "v0.1.1"
+__version__ = "v1.0.0"
 
 __all__ = [
     "NaturalLanguagePassword",
