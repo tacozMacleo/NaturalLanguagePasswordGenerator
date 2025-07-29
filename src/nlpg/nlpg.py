@@ -17,10 +17,10 @@ import typing
 class NaturalLanguagePassword:
     def __init__(self, self_random: bool = True) -> None:
         db_file = pathlib.Path(__file__).resolve().parent / "nlpg.db"
-        self.log = logging.getLogger("nlp_gen")
+        self.log = logging.getLogger("nlpg")
         self.log.addHandler(logging.NullHandler())
         self._random = self_random
-        self.log.debug("Initialise nlp.")
+        self.log.debug("Initialise nlpg.")
         if not db_file.exists():
             self.log.warning("Database not found.")
             self.db = sqlite3.connect(db_file)
